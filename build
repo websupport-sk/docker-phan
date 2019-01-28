@@ -57,7 +57,7 @@ new_version() {
   done
   chmod +x "versions/${version}/docker-entrypoint.sh"
 
-  sed "s:{{.VERSION}}:${version}:g"<"templates/test/test_cloudflare_phan.bats">"test/test_cloudflare_phan-${version}.bats"
+  sed "s:{{.VERSION}}:${version}:g"<"templates/test/phan.bats">"test/phan-${version}.bats"
 }
 
 main() {
