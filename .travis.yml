@@ -18,6 +18,6 @@ script:
 
 deploy:
   - provider: script
-    script: docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" && ./build push versions/$VERSION/options
+    script: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin && ./build push versions/$VERSION/options
     on:
       branch: master
