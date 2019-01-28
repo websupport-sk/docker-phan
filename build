@@ -39,7 +39,7 @@ run_tests() {
     source "$file"
     local tag
     tag="${TAGS[0]}" tag="${tag//:/-}" tag="${tag//\//_}"
-    test_files+=("test/test_${tag}.bats")
+    test_files+=("test/${tag}.bats")
   done
   bats "${test_files[@]}"
 }
